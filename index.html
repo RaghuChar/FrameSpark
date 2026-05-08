@@ -1,0 +1,608 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!--
+      FrameSpark — Home
+      - Tailwind is loaded via CDN for a simple “open locally” experience (no build step).
+      - Shared styles live in style.css and shared JS in script.js.
+    -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FrameSpark — Advertising & Marketing That Moves People</title>
+    <meta
+      name="description"
+      content="FrameSpark is a modern advertising & marketing agency for stores, restaurants, and ambitious brands—content creation, digital marketing, websites, and growth strategy."
+    />
+    <meta name="theme-color" content="#0F172A" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      // Tailwind config for brand tokens (kept tiny; no plugin dependencies).
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              fsPrimary: "#0F172A",
+              fsAccent: "#38BDF8",
+              fsSecondary: "#1D4ED8",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/png" href="./FrameSpark_.PNG" />
+  </head>
+  <body class="min-h-screen text-slate-200">
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <!-- Background texture -->
+    <div class="bg-grid fixed inset-0 opacity-40"></div>
+
+    <!-- Header / Navbar -->
+    <header id="siteHeader" class="fixed top-0 left-0 right-0 z-50">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="flex h-28 items-center justify-between">
+          <a href="./index.html" class="flex items-center gap-2 rounded-xl px-2 py-1 hover:bg-white/5">
+            <img
+              src="./FrameSpark_.PNG"
+              alt="FrameSpark"
+              class="logo-img h-24 w-auto rounded-xl"
+              loading="eager"
+            />
+            <span class="sr-only">FrameSpark</span>
+          </a>
+
+          <!-- Desktop nav -->
+          <nav class="flex items-center gap-6" aria-label="Primary">
+            <a data-nav href="./index.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">Home</a>
+            <a data-nav href="./about.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">About</a>
+            <a data-nav href="./services.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">Services</a>
+            <a data-nav href="./portfolio.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">Portfolio</a>
+            <a data-nav href="./members.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">Members</a>
+            <a data-nav href="./contact.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">Contact</a>
+          </nav>
+
+          <div class="flex items-center gap-3">
+            <a href="./contact.html" class="btn btn-ghost text-sm">Let’s talk</a>
+            <a href="./services.html" class="btn btn-primary text-sm">View services</a>
+          </div>
+
+          <!-- Mobile button -->
+          <button
+            id="menuButton"
+            class="hidden inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-100"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+            aria-label="Open menu"
+          >
+            <span class="sr-only">Menu</span>
+            <!-- Simple hamburger -->
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile panel -->
+  <div id="mobileMenu" class="hidden">
+        <div class="mx-auto max-w-6xl px-4 pb-4">
+          <div class="glass rounded-2xl p-4">
+            <div class="grid gap-2">
+              <a data-nav href="./index.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">Home</a>
+              <a data-nav href="./about.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">About</a>
+              <a data-nav href="./services.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">Services</a>
+              <a data-nav href="./portfolio.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">Portfolio</a>
+              <a data-nav href="./members.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">Members</a>
+              <a data-nav href="./contact.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">Contact</a>
+              <div class="mt-2 grid grid-cols-2 gap-2">
+                <a href="./contact.html" class="btn btn-ghost text-sm">Get started</a>
+                <a href="./services.html" class="btn btn-primary text-sm">View services</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="pt-32">
+      <!-- Hero -->
+      <section class="relative">
+        <div class="mx-auto max-w-6xl px-4">
+          <div class="grid items-center gap-10 py-16 grid-cols-2">
+            <div class="reveal">
+              <p class="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/5 px-4 py-2 text-xs font-medium text-slate-200/85">
+                <span class="h-2 w-2 rounded-full bg-fsAccent"></span>
+                Creative marketing for modern businesses
+              </p>
+              <h1 class="mt-5 text-5xl font-extrabold tracking-tight text-slate-50">
+                <span class="gradient-text">Igniting Brands.</span> Creating Impact.
+              </h1>
+              <p class="mt-4 text-base leading-relaxed text-slate-200/75">
+                FrameSpark blends content, performance marketing, and web experiences into a single growth engine.
+                We help stores and restaurants look premium, feel memorable, and convert attention into sales.
+              </p>
+              <div class="mt-7 flex flex-row gap-3">
+                <a href="./contact.html" class="btn btn-primary">
+                  Get Started
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M7 17L17 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M9 7h8v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </a>
+                <a href="./services.html" class="btn btn-secondary">View Services</a>
+              </div>
+
+              <!-- Trust chips -->
+              <div class="mt-8 grid grid-cols-4 gap-3">
+                <div class="glass-lite rounded-2xl px-4 py-3">
+                  <p class="text-xs font-semibold text-slate-100">Content</p>
+                  <p class="mt-1 text-xs text-slate-200/70">Photo • Video • Reels</p>
+                </div>
+                <div class="glass-lite rounded-2xl px-4 py-3">
+                  <p class="text-xs font-semibold text-slate-100">Marketing</p>
+                  <p class="mt-1 text-xs text-slate-200/70">Meta • Google • SEO</p>
+                </div>
+                <div class="glass-lite rounded-2xl px-4 py-3">
+                  <p class="text-xs font-semibold text-slate-100">Web</p>
+                  <p class="mt-1 text-xs text-slate-200/70">Design • Build • Deploy</p>
+                </div>
+                <div class="glass-lite rounded-2xl px-4 py-3">
+                  <p class="text-xs font-semibold text-slate-100">Strategy</p>
+                  <p class="mt-1 text-xs text-slate-200/70">Positioning • Growth</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="reveal" data-reveal="scale">
+              <div class="glass relative overflow-hidden rounded-3xl p-4" data-tilt="card" data-tilt-strength="10">
+                <div class="absolute -top-20 -right-16 h-56 w-56 rounded-full bg-fsSecondary/20 blur-3xl"></div>
+                <div class="absolute -bottom-24 -left-16 h-56 w-56 rounded-full bg-fsAccent/15 blur-3xl"></div>
+                <div class="grid gap-3">
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <p class="text-xs font-semibold text-slate-100">This week’s focus</p>
+                    <p class="mt-1 text-sm text-slate-200/75">
+                      Launch a “Weekend Special” campaign with scroll-stopping reels + a landing page that captures leads.
+                    </p>
+                  </div>
+                  <div class="grid grid-cols-2 gap-3">
+                    <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                      <p class="text-xs text-slate-200/70">Avg. CTR</p>
+                      <p class="mt-2 text-2xl font-extrabold text-slate-50">3.8%</p>
+                      <p class="mt-1 text-xs text-slate-200/60">Optimized creative + targeting</p>
+                    </div>
+                    <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                      <p class="text-xs text-slate-200/70">Leads / month</p>
+                      <p class="mt-2 text-2xl font-extrabold text-slate-50">240+</p>
+                      <p class="mt-1 text-xs text-slate-200/60">Fast forms + strong offer</p>
+                    </div>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-4">
+                    <p class="text-xs font-semibold text-slate-100">Creative direction</p>
+                    <div class="mt-3 grid grid-cols-3 gap-2">
+                      <div class="h-16 rounded-xl bg-gradient-to-br from-fsSecondary/25 to-white/5"></div>
+                      <div class="h-16 rounded-xl bg-gradient-to-br from-fsAccent/25 to-white/5"></div>
+                      <div class="h-16 rounded-xl bg-gradient-to-br from-white/10 to-white/5"></div>
+                    </div>
+                    <p class="mt-3 text-xs text-slate-200/65">
+                      Bold hooks, clean branding, and quick value delivery—built for attention spans.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <p class="mt-4 text-center text-xs text-slate-200/55">
+                Real results come from a system: creative + distribution + conversion.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Short intro -->
+  <section class="py-14">
+        <div class="mx-auto max-w-6xl px-4">
+          <div class="glass rounded-3xl p-10 reveal">
+            <div class="grid gap-8 grid-cols-3 items-center">
+              <div>
+                <h2 class="text-2xl font-bold tracking-tight text-slate-50">A small team with a studio mindset.</h2>
+                <p class="mt-3 text-sm leading-relaxed text-slate-200/72">
+                  FrameSpark is built for businesses that want premium presentation without enterprise overhead.
+                  We move fast, stay sharp, and ship creative that feels expensive—because it should.
+                </p>
+              </div>
+              <div class="col-span-2">
+                <div class="grid gap-4 grid-cols-2">
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <p class="text-sm font-semibold text-slate-50">Content that sells</p>
+                    <p class="mt-2 text-sm text-slate-200/70">
+                      Product photos, reels, and brand assets designed to stop scrolls and earn clicks.
+                    </p>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <p class="text-sm font-semibold text-slate-50">Marketing that compounds</p>
+                    <p class="mt-2 text-sm text-slate-200/70">
+                      We build repeatable campaigns—clear offers, clean funnels, and weekly optimization.
+                    </p>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <p class="text-sm font-semibold text-slate-50">Websites that convert</p>
+                    <p class="mt-2 text-sm text-slate-200/70">
+                      Fast, mobile-first sites that look premium and guide visitors to take action.
+                    </p>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <p class="text-sm font-semibold text-slate-50">Strategy you can execute</p>
+                    <p class="mt-2 text-sm text-slate-200/70">
+                      Positioning, pricing, and growth plays—packaged into an actionable plan.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services overview -->
+  <section class="py-14">
+        <div class="mx-auto max-w-6xl px-4">
+          <div class="flex items-end justify-between gap-6">
+            <div class="reveal">
+              <h2 class="text-2xl font-bold tracking-tight text-slate-50">Services built for momentum</h2>
+              <p class="mt-2 text-sm text-slate-200/70">
+                Pick a single service or plug into our full growth stack.
+              </p>
+            </div>
+            <a href="./services.html" class="inline-flex text-sm font-semibold text-slate-100 link">Explore all services</a>
+          </div>
+
+          <div class="mt-7 grid gap-4 grid-cols-4">
+            <!-- Card -->
+            <div class="glass rounded-3xl p-6 reveal">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-fsAccent/15 ring-1 ring-fsAccent/20">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 7h6l2-2h8v14H4V7Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M8 12h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <p class="text-sm font-semibold text-slate-50">Content Creation</p>
+              </div>
+              <p class="mt-3 text-sm text-slate-200/70">
+                Photos, videos, reels, and branding assets designed for performance—not just aesthetics.
+              </p>
+              <p class="mt-4 text-xs text-slate-200/60">Includes: shoots, editing, creative direction</p>
+            </div>
+
+            <div class="glass rounded-3xl p-6 reveal">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-fsSecondary/15 ring-1 ring-fsSecondary/20">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 19V5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M7 14l4-4 3 3 6-6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M20 7v5h-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </span>
+                <p class="text-sm font-semibold text-slate-50">Digital Marketing</p>
+              </div>
+              <p class="mt-3 text-sm text-slate-200/70">
+                Meta/Google campaigns, SEO basics, and conversion tracking so you can scale with clarity.
+              </p>
+              <p class="mt-4 text-xs text-slate-200/60">Includes: ads, analytics, optimization</p>
+            </div>
+
+            <div class="glass rounded-3xl p-6 reveal">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-white/10 ring-1 ring-white/15">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M4 6h16v12H4V6Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                    <path d="M8 10h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M8 14h5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                  </svg>
+                </span>
+                <p class="text-sm font-semibold text-slate-50">Website Development</p>
+              </div>
+              <p class="mt-3 text-sm text-slate-200/70">
+                Modern, fast websites with clean UX and deployment handled end-to-end.
+              </p>
+              <p class="mt-4 text-xs text-slate-200/60">Includes: design, build, deployment</p>
+            </div>
+
+            <div class="glass rounded-3xl p-6 reveal">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-fsAccent/10 ring-1 ring-white/15">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                    <path d="M12 2v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 18v4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M4.93 4.93l2.83 2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M16.24 16.24l2.83 2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M2 12h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M18 12h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M4.93 19.07l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M16.24 7.76l2.83-2.83" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <path d="M12 8a4 4 0 1 0 0 8 4 4 0 0 0 0-8Z" stroke="currentColor" stroke-width="2"/>
+                  </svg>
+                </span>
+                <p class="text-sm font-semibold text-slate-50">Business Strategy</p>
+              </div>
+              <p class="mt-3 text-sm text-slate-200/70">
+                Offers, pricing, retention, and growth consulting—so marketing has something strong to sell.
+              </p>
+              <p class="mt-4 text-xs text-slate-200/60">Includes: audits, playbooks, consulting</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Portfolio preview -->
+  <section class="py-14">
+        <div class="mx-auto max-w-6xl px-4">
+          <div class="flex items-end justify-between gap-6">
+            <div class="reveal">
+              <h2 class="text-2xl font-bold tracking-tight text-slate-50">Work that feels premium</h2>
+              <p class="mt-2 text-sm text-slate-200/70">
+                A few examples across restaurants, retail, branding, and websites.
+              </p>
+            </div>
+            <a href="./portfolio.html" class="inline-flex text-sm font-semibold text-slate-100 link">View the full portfolio</a>
+          </div>
+
+          <div class="mt-7 grid gap-4 grid-cols-3">
+            <!-- Project card -->
+            <button
+              class="glass group overflow-hidden rounded-3xl text-left reveal"
+              data-project
+              data-title="Saffron & Smoke — Reels + Offer Campaign"
+              data-desc="A 14-day creative sprint for a new restaurant launch: 8 reels, 12 stories, and a simple landing page that captured weekend reservations."
+              data-tags="Reels, Meta Ads, Launch Strategy"
+              data-image="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1800&q=70"
+              aria-label="Open project preview: Saffron & Smoke"
+            >
+              <div class="relative h-52 overflow-hidden">
+                <img
+                  loading="lazy"
+                  src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=70"
+                  alt="Restaurant table and ambience"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4">
+                  <p class="text-sm font-semibold text-slate-50">Saffron &amp; Smoke</p>
+                  <p class="mt-1 text-xs text-slate-200/80">Reels + offer-led ads</p>
+                </div>
+              </div>
+              <div class="p-5">
+                <p class="text-sm text-slate-200/75">
+                  Scroll-stopping creative and a clean funnel—built to turn curiosity into bookings.
+                </p>
+              </div>
+            </button>
+
+            <button
+              class="glass group overflow-hidden rounded-3xl text-left reveal"
+              data-project
+              data-title="Northline Retail — Brand Refresh + Product Photos"
+              data-desc="A modern identity refresh with studio-style product photography. Built a consistent look across in-store, Instagram, and WhatsApp catalogs."
+              data-tags="Branding, Product Photography, Social Templates"
+              data-image="https://images.unsplash.com/photo-1520975958225-2b4da6f8f3f0?auto=format&fit=crop&w=1800&q=70"
+              aria-label="Open project preview: Northline Retail"
+            >
+              <div class="relative h-52 overflow-hidden">
+                <img
+                  loading="lazy"
+                  src="https://images.unsplash.com/photo-1520975958225-2b4da6f8f3f0?auto=format&fit=crop&w=1200&q=70"
+                  alt="Retail store interior"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4">
+                  <p class="text-sm font-semibold text-slate-50">Northline Retail</p>
+                  <p class="mt-1 text-xs text-slate-200/80">Branding + product photos</p>
+                </div>
+              </div>
+              <div class="p-5">
+                <p class="text-sm text-slate-200/75">
+                  A cohesive visual system that makes every post feel like a campaign.
+                </p>
+              </div>
+            </button>
+
+            <button
+              class="glass group overflow-hidden rounded-3xl text-left reveal"
+              data-project
+              data-title="Drift Studio — Website Design & Deployment"
+              data-desc="A lightweight, mobile-first website for a service brand—fast load times, clear messaging, and a lead-capture section that converts."
+              data-tags="Web Design, Development, Deployment"
+              data-image="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1800&q=70"
+              aria-label="Open project preview: Drift Studio"
+            >
+              <div class="relative h-52 overflow-hidden">
+                <img
+                  loading="lazy"
+                  src="https://images.unsplash.com/photo-1545239351-1141bd82e8a6?auto=format&fit=crop&w=1200&q=70"
+                  alt="Laptop on desk with design tools"
+                  class="h-full w-full object-cover transition-transform duration-300 group-hover:scale-[1.03]"
+                />
+                <div class="absolute inset-0 bg-gradient-to-t from-black/60 via-black/10 to-transparent"></div>
+                <div class="absolute bottom-4 left-4 right-4">
+                  <p class="text-sm font-semibold text-slate-50">Drift Studio</p>
+                  <p class="mt-1 text-xs text-slate-200/80">Website build + deploy</p>
+                </div>
+              </div>
+              <div class="p-5">
+                <p class="text-sm text-slate-200/75">
+                  Clean UX, bold visuals, and clear CTAs—built to generate leads on autopilot.
+                </p>
+              </div>
+            </button>
+          </div>
+        </div>
+      </section>
+
+      <!-- Testimonials -->
+  <section class="py-14">
+        <div class="mx-auto max-w-6xl px-4">
+          <div class="reveal">
+            <h2 class="text-2xl font-bold tracking-tight text-slate-50">Partners who move fast</h2>
+            <p class="mt-2 text-sm text-slate-200/70">
+              Placeholder testimonials you can replace with real client quotes.
+            </p>
+          </div>
+
+          <div class="mt-7 grid gap-4 grid-cols-3">
+            <figure class="glass rounded-3xl p-6 reveal">
+              <blockquote class="text-sm leading-relaxed text-slate-200/75">
+                “Our reels finally looked like a brand—clean, bold, and consistent. We saw more DMs and
+                weekend walk-ins within the first two weeks.”
+              </blockquote>
+              <figcaption class="mt-5 flex items-center justify-between">
+                <div>
+                  <p class="text-sm font-semibold text-slate-50">Restaurant Owner</p>
+                  <p class="text-xs text-slate-200/60">New launch, local city</p>
+                </div>
+                <span class="text-xs text-slate-200/55">★★★★★</span>
+              </figcaption>
+            </figure>
+
+            <figure class="glass rounded-3xl p-6 reveal">
+              <blockquote class="text-sm leading-relaxed text-slate-200/75">
+                “FrameSpark didn’t just run ads—they fixed the offer, cleaned up our landing page, and
+                made tracking simple. Everything became measurable.”
+              </blockquote>
+              <figcaption class="mt-5 flex items-center justify-between">
+                <div>
+                  <p class="text-sm font-semibold text-slate-50">Retail Manager</p>
+                  <p class="text-xs text-slate-200/60">Multi-store brand</p>
+                </div>
+                <span class="text-xs text-slate-200/55">★★★★★</span>
+              </figcaption>
+            </figure>
+
+            <figure class="glass rounded-3xl p-6 reveal">
+              <blockquote class="text-sm leading-relaxed text-slate-200/75">
+                “The website feels premium and loads instantly. Leads doubled because the copy is sharper and
+                the CTAs are placed where people actually decide.”
+              </blockquote>
+              <figcaption class="mt-5 flex items-center justify-between">
+                <div>
+                  <p class="text-sm font-semibold text-slate-50">Founder</p>
+                  <p class="text-xs text-slate-200/60">Service business</p>
+                </div>
+                <span class="text-xs text-slate-200/55">★★★★★</span>
+              </figcaption>
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA banner -->
+  <section class="py-16">
+        <div class="mx-auto max-w-6xl px-4">
+          <div class="glass relative overflow-hidden rounded-3xl p-12 reveal">
+            <div class="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-fsSecondary/20 blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-fsAccent/20 blur-3xl"></div>
+            <div class="relative grid items-center gap-8 grid-cols-3">
+              <div class="col-span-2">
+                <h2 class="text-2xl font-extrabold tracking-tight text-slate-50 text-3xl">
+                  Ready to make your brand impossible to ignore?
+                </h2>
+                <p class="mt-3 text-sm text-slate-200/72">
+                  Tell us what you’re building. We’ll map the fastest path to better content, stronger campaigns,
+                  and a website that converts.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3 items-end">
+                <a href="./contact.html" class="btn btn-primary w-auto">Book a quick call</a>
+                <a href="./portfolio.html" class="btn btn-secondary w-auto">See recent work</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 py-10">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="grid gap-8 grid-cols-4">
+          <div class="col-span-2">
+            <p class="text-base font-semibold text-slate-50">FrameSpark</p>
+            <p class="mt-2 max-w-md text-sm text-slate-200/70">
+              Modern advertising and marketing for brands that want to look premium and grow with intent.
+            </p>
+            <div class="mt-4 flex flex-wrap items-center gap-3 text-sm">
+              <a class="link text-slate-100" href="./contact.html">Get a proposal</a>
+              <span class="text-slate-200/40">•</span>
+              <a class="link text-slate-100" href="./services.html">Explore services</a>
+              <span class="text-slate-200/40">•</span>
+              <a class="link text-slate-100" href="./portfolio.html">View work</a>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-sm font-semibold text-slate-50">Company</p>
+            <ul class="mt-3 grid gap-2 text-sm text-slate-200/70">
+              <li><a class="hover:text-slate-50" href="./about.html">About</a></li>
+              <li><a class="hover:text-slate-50" href="./services.html">Services</a></li>
+              <li><a class="hover:text-slate-50" href="./portfolio.html">Portfolio</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-sm font-semibold text-slate-50">Social</p>
+            <ul class="mt-3 grid gap-2 text-sm text-slate-200/70">
+              <!-- Placeholders you can replace with real links -->
+              <li><a class="hover:text-slate-50" href="#" aria-label="Instagram (placeholder)">Instagram</a></li>
+              <li><a class="hover:text-slate-50" href="#" aria-label="LinkedIn (placeholder)">LinkedIn</a></li>
+              <li><a class="hover:text-slate-50" href="#" aria-label="YouTube (placeholder)">YouTube</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-10 flex flex-row items-center justify-between gap-2 border-t border-white/10 pt-6 text-xs text-slate-200/55">
+          <p>© <span id="year"></span> FrameSpark. All rights reserved.</p>
+          <p>Built for speed • SEO-friendly • Desktop-first</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Portfolio Modal (shared) -->
+    <div id="projectModal" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-label="Project preview">
+      <div class="modal-panel glass relative">
+        <button id="projectModalClose" class="modal-close btn btn-ghost" type="button" aria-label="Close preview">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <div class="grid grid-cols-5">
+          <div class="col-span-3">
+            <img id="projectModalImage" src="" alt="Project preview" />
+          </div>
+          <div class="p-6 col-span-2">
+            <p class="text-xs font-semibold text-slate-200/70">Project</p>
+            <h3 id="projectModalTitle" class="mt-2 text-xl font-extrabold tracking-tight text-slate-50">Project Title</h3>
+            <p id="projectModalDesc" class="mt-3 text-sm leading-relaxed text-slate-200/72"></p>
+            <div id="projectModalTags" class="mt-5 flex flex-wrap gap-2"></div>
+            <div class="mt-7 grid gap-2">
+              <a href="./contact.html" class="btn btn-primary">Build something like this</a>
+              <a href="./portfolio.html" class="btn btn-secondary">See more projects</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // Tiny footer helper (kept inline to avoid extra JS just for a date).
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="./script.js"></script>
+  </body>
+</html>
+
