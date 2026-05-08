@@ -1,0 +1,339 @@
+/* FrameSpark — shared styles
+   Notes:
+   - Tailwind is used via CDN for layout + utility styling.
+   - This file adds brand-level polish: glassmorphism, animations, and a few reusable components.
+*/
+
+:root{
+  --fs-primary:#0F172A;
+  /* Theme aligned to FrameSpark_.PNG */
+  --fs-accent:#38BDF8;
+  --fs-secondary:#1D4ED8;
+  --fs-bg:#070B18;
+  --fs-card: rgba(255,255,255,.06);
+  --fs-card-strong: rgba(255,255,255,.10);
+  --fs-border: rgba(255,255,255,.14);
+  --fs-text: rgba(226,232,240,.92);
+  --fs-muted: rgba(226,232,240,.70);
+  --fs-shadow: 0 20px 60px rgba(0,0,0,.35);
+}
+
+html { scroll-behavior:smooth; }
+body{
+  font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji","Segoe UI Emoji";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background: radial-gradient(1200px 800px at 15% 10%, rgba(56,189,248,.18), transparent 60%),
+              radial-gradient(900px 650px at 80% 20%, rgba(29,78,216,.14), transparent 55%),
+              linear-gradient(180deg, #050815 0%, #050815 45%, #070B18 100%);
+  color: var(--fs-text);
+}
+
+/* Premium layered background (animated blobs + subtle noise).
+   Implemented in CSS so every page gets it automatically. */
+body::before{
+  content:"";
+  position:fixed;
+  inset:-20%;
+  z-index:-2;
+  background:
+    radial-gradient(900px 520px at 8% 18%, rgba(56,189,248,.17), transparent 62%),
+    radial-gradient(740px 520px at 78% 22%, rgba(29,78,216,.16), transparent 60%),
+    radial-gradient(620px 520px at 62% 88%, rgba(56,189,248,.10), transparent 55%);
+  filter: blur(0px) saturate(1.05);
+  opacity: .85;
+  animation: float-blobs 18s ease-in-out infinite alternate;
+  pointer-events:none;
+}
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  opacity:.06;
+  pointer-events:none;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='120' height='120' filter='url(%23n)' opacity='.55'/%3E%3C/svg%3E");
+  mix-blend-mode: overlay;
+}
+@keyframes float-blobs{
+  0%{ transform: translate3d(0,0,0) scale(1); }
+  50%{ transform: translate3d(2.5%, -1.5%, 0) scale(1.02); }
+  100%{ transform: translate3d(-2%, 2%, 0) scale(1.03); }
+}
+
+/* Accessible focus */
+:focus-visible{
+  outline: 2px solid color-mix(in srgb, var(--fs-secondary) 70%, white);
+  outline-offset: 3px;
+  border-radius: 10px;
+}
+
+/* Subtle grid texture */
+.bg-grid{
+  background-image:
+    linear-gradient(to right, rgba(148,163,184,.10) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(148,163,184,.10) 1px, transparent 1px);
+  background-size: 42px 42px;
+  mask-image: radial-gradient(circle at 20% 10%, rgba(0,0,0,1), rgba(0,0,0,.5) 40%, transparent 70%);
+  pointer-events:none;
+}
+
+/* Glass cards */
+.glass{
+  /* Apple-like: softer, cleaner glass */
+  background: linear-gradient(180deg, rgba(255,255,255,.085), rgba(255,255,255,.045));
+  border: 1px solid var(--fs-border);
+  box-shadow: 0 20px 70px rgba(0,0,0,.36);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  transition: transform .22s ease, border-color .22s ease, box-shadow .22s ease, filter .22s ease;
+  position:relative;
+}
+.glass-lite{
+  background: rgba(255,255,255,.05);
+  border: 1px solid rgba(255,255,255,.10);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Lift-on-hover for cards/buttons that use .glass */
+.glass:hover{
+  transform: translateY(-2px);
+  border-color: rgba(255,255,255,.20);
+  box-shadow: 0 26px 86px rgba(0,0,0,.48);
+}
+
+/* Subtle specular highlight (feels “Apple”) */
+.glass::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  pointer-events:none;
+  background:
+    radial-gradient(800px 260px at 15% 10%, rgba(255,255,255,.10), transparent 55%),
+    radial-gradient(900px 300px at 85% 0%, rgba(56,189,248,.08), transparent 55%);
+  opacity:.75;
+  mix-blend-mode: screen;
+}
+
+/* Buttons */
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:.55rem;
+  padding:.9rem 1.05rem;
+  /* Apple-like pill buttons */
+  border-radius: 999px;
+  font-weight: 600;
+  letter-spacing: -.01em;
+  transition: transform .15s ease, box-shadow .2s ease, background-color .2s ease, border-color .2s ease, color .2s ease;
+  user-select:none;
+  will-change: transform;
+  position:relative;
+  overflow:hidden;
+}
+.btn:active{ transform: translateY(1px) scale(.99); }
+.btn-primary{
+  background: linear-gradient(135deg, rgba(56,189,248,.95), rgba(29,78,216,.92));
+  color: #0B1224;
+  box-shadow: 0 16px 42px rgba(56,189,248,.18);
+}
+.btn-primary::before{
+  /* Subtle “spark shine” sweep */
+  content:"";
+  position:absolute;
+  inset:-2px;
+  background: linear-gradient(120deg, transparent 0%, rgba(255,255,255,.38) 35%, transparent 70%);
+  transform: translateX(-120%) skewX(-18deg);
+  opacity:.55;
+}
+.btn-primary:hover::before{
+  animation: shine 1.1s ease forwards;
+}
+@keyframes shine{
+  to{ transform: translateX(120%) skewX(-18deg); }
+}
+.btn-primary:hover{
+  transform: translateY(-1px);
+  box-shadow: 0 22px 54px rgba(56,189,248,.24);
+}
+.btn-secondary{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.14);
+  color: rgba(226,232,240,.96);
+}
+.btn-secondary:hover{
+  background: rgba(255,255,255,.08);
+  border-color: rgba(255,255,255,.20);
+  transform: translateY(-1px);
+}
+.btn-ghost{
+  background: rgba(255,255,255,.06);
+  border: 1px solid rgba(255,255,255,.12);
+  color: rgba(226,232,240,.92);
+}
+.btn-ghost:hover{
+  background: rgba(255,255,255,.08);
+  transform: translateY(-1px);
+}
+
+/* Navbar */
+.nav-solid{
+  background: rgba(10,14,28,.62);
+  border-bottom: 1px solid rgba(148,163,184,.14);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Nicer desktop nav hover (works with existing markup) */
+nav[aria-label="Primary"] a{
+  position:relative;
+}
+nav[aria-label="Primary"] a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  right:0;
+  bottom:-8px;
+  height:2px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, rgba(56,189,248,.0), rgba(56,189,248,.75), rgba(29,78,216,.75), rgba(56,189,248,.0));
+  transform: scaleX(.2);
+  opacity:0;
+  transition: transform .18s ease, opacity .18s ease;
+}
+nav[aria-label="Primary"] a:hover::after{
+  transform: scaleX(1);
+  opacity:1;
+}
+nav[aria-label="Primary"] a[aria-current="page"]::after{
+  transform: scaleX(1);
+  opacity:1;
+}
+.skip-link{
+  position:absolute;
+  left:12px;
+  top:-60px;
+  padding:.7rem .9rem;
+  border-radius: 12px;
+  background: rgba(56,189,248,.18);
+  border: 1px solid rgba(56,189,248,.30);
+  color: rgba(226,232,240,.98);
+  transition: top .2s ease;
+  z-index: 60;
+}
+.skip-link:focus{ top:12px; }
+
+/* Scroll reveal */
+.reveal{
+  opacity:0;
+  transform: translateY(12px);
+  transition: opacity .65s ease, transform .65s ease;
+}
+.reveal.is-visible{
+  opacity:1;
+  transform: translateY(0);
+}
+.reveal[data-reveal="fade"]{ transform:none; }
+.reveal[data-reveal="fade"].is-visible{ transform:none; }
+.reveal[data-reveal="scale"]{ transform: scale(.98); }
+.reveal[data-reveal="scale"].is-visible{ transform: scale(1); }
+
+/* Gradient text */
+.gradient-text{
+  background: linear-gradient(90deg, rgba(56,189,248,.98) 0%, rgba(96,165,250,.98) 55%, rgba(29,78,216,.98) 100%);
+  -webkit-background-clip:text;
+  background-clip:text;
+  color: transparent;
+}
+
+/* Hairline separators like Apple */
+.hairline{
+  height:1px;
+  background: linear-gradient(90deg, transparent, rgba(148,163,184,.18), transparent);
+}
+
+/* Portfolio modal */
+.modal-backdrop{
+  position:fixed;
+  inset:0;
+  background: rgba(2,6,23,.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  display:none;
+  align-items:center;
+  justify-content:center;
+  padding: 20px;
+  z-index: 80;
+}
+.modal-backdrop.is-open{ display:flex; }
+.modal-panel{
+  width:min(980px, 100%);
+  border-radius: 18px;
+  overflow:hidden;
+}
+
+/* Modal pop animation */
+.modal-backdrop.is-open .modal-panel{
+  animation: modal-pop .18s ease-out;
+}
+@keyframes modal-pop{
+  from{ transform: translateY(8px) scale(.985); opacity:.7; }
+  to{ transform: translateY(0) scale(1); opacity:1; }
+}
+.modal-panel img{
+  width:100%;
+  height:auto;
+  display:block;
+}
+.modal-close{
+  position:absolute;
+  top:14px;
+  right:14px;
+}
+
+/* Pretty underline links */
+.link{
+  position:relative;
+  text-decoration:none;
+}
+.link::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-3px;
+  width:100%;
+  height:1px;
+  background: rgba(56,189,248,.55);
+  transform: scaleX(0);
+  transform-origin:left;
+  transition: transform .2s ease;
+}
+.link:hover::after{ transform: scaleX(1); }
+
+/* Logo visibility (FrameSpark_.PNG is dark-on-dark) */
+.logo-img{
+  /* Makes the dark logo appear white on dark UI */
+  filter: invert(1) brightness(1.15) contrast(1.15) drop-shadow(0 10px 24px rgba(0,0,0,.45));
+}
+
+/* Subtle custom scrollbar (desktop) */
+@media (hover:hover){
+  ::-webkit-scrollbar{ width: 10px; height: 10px; }
+  ::-webkit-scrollbar-thumb{
+    background: linear-gradient(180deg, rgba(56,189,248,.35), rgba(29,78,216,.30));
+    border: 2px solid rgba(2,6,23,.65);
+    border-radius: 999px;
+  }
+  ::-webkit-scrollbar-track{ background: rgba(2,6,23,.35); }
+}
+
+/* Respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  html { scroll-behavior:auto; }
+  .reveal{ opacity:1; transform:none; transition:none; }
+  .btn{ transition:none; }
+  body::before{ animation:none; }
+}
+
