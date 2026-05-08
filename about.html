@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- FrameSpark — About -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>About FrameSpark — Modern Creative + Growth</title>
+    <meta
+      name="description"
+      content="Meet FrameSpark: a modern advertising and marketing team blending creative production, performance marketing, web development, and growth strategy."
+    />
+    <meta name="theme-color" content="#0F172A" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              fsPrimary: "#0F172A",
+              fsAccent: "#38BDF8",
+              fsSecondary: "#1D4ED8",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/png" href="./FrameSpark_.PNG" />
+  </head>
+  <body class="min-h-screen text-slate-200">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="bg-grid fixed inset-0 opacity-40"></div>
+
+    <!-- Header / Navbar (shared) -->
+    <header id="siteHeader" class="fixed top-0 left-0 right-0 z-50">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="flex h-28 items-center justify-between">
+          <a href="./index.html" class="flex items-center gap-2 rounded-xl px-2 py-1 hover:bg-white/5">
+            <img
+              src="./FrameSpark_.PNG"
+              alt="FrameSpark"
+              class="logo-img h-20 w-auto rounded-xl sm:h-24"
+              loading="eager"
+            />
+            <span class="sr-only">FrameSpark</span>
+          </a>
+
+          <nav class="hidden items-center gap-6 md:flex" aria-label="Primary">
+            <a data-nav href="./index.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">Home</a>
+            <a data-nav href="./about.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">About</a>
+            <a data-nav href="./services.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">Services</a>
+            <a data-nav href="./portfolio.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">Portfolio</a>
+            <a data-nav href="./members.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">Members</a>
+            <a data-nav href="./contact.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">Contact</a>
+          </nav>
+
+          <div class="hidden items-center gap-3 md:flex">
+            <a href="./contact.html" class="btn btn-ghost text-sm">Let’s talk</a>
+            <a href="./services.html" class="btn btn-primary text-sm">View services</a>
+          </div>
+
+          <button
+            id="menuButton"
+            class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-100"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+            aria-label="Open menu"
+          >
+            <span class="sr-only">Menu</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobileMenu" class="hidden md:hidden">
+        <div class="mx-auto max-w-6xl px-4 pb-4">
+          <div class="glass rounded-2xl p-4">
+            <div class="grid gap-2">
+              <a data-nav href="./index.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">Home</a>
+              <a data-nav href="./about.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">About</a>
+              <a data-nav href="./services.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">Services</a>
+              <a data-nav href="./portfolio.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">Portfolio</a>
+              <a data-nav href="./members.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">Members</a>
+              <a data-nav href="./contact.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">Contact</a>
+              <div class="mt-2 grid grid-cols-2 gap-2">
+                <a href="./contact.html" class="btn btn-ghost text-sm">Get started</a>
+                <a href="./services.html" class="btn btn-primary text-sm">View services</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="pt-32">
+      <!-- Page intro -->
+      <section class="py-10 md:py-14">
+        <div class="mx-auto max-w-6xl px-4">
+          <div class="grid gap-10 md:grid-cols-2 md:items-start">
+            <div class="reveal">
+              <p class="text-xs font-semibold uppercase tracking-widest text-slate-200/60">About FrameSpark</p>
+              <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-slate-50">
+                A modern agency built for real-world growth.
+              </h1>
+              <p class="mt-4 text-sm leading-relaxed text-slate-200/75">
+                FrameSpark exists for brands that want more than “pretty posts.” We combine creative production,
+                performance marketing, and web experiences so every piece of work pushes the business forward.
+              </p>
+              <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+                <a class="btn btn-primary" href="./contact.html">Start a project</a>
+                <a class="btn btn-secondary" href="./portfolio.html">See our work</a>
+              </div>
+            </div>
+
+            <div class="reveal" data-reveal="scale">
+              <div class="glass overflow-hidden rounded-3xl">
+                <img
+                  loading="lazy"
+                  src="https://images.unsplash.com/photo-1551817958-20204d6ab95c?auto=format&fit=crop&w=1600&q=70"
+                  alt="Team collaborating in a studio-like workspace"
+                  class="h-72 w-full object-cover md:h-[420px]"
+                />
+                <div class="p-6">
+                  <p class="text-sm font-semibold text-slate-50">How we show up</p>
+                  <p class="mt-2 text-sm text-slate-200/70">
+                    Fast communication, clean execution, and measurable outcomes—without the agency fluff.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Story -->
+      <section class="py-10 md:py-14">
+        <div class="mx-auto max-w-6xl px-4">
+          <div class="glass rounded-3xl p-7 md:p-10 reveal">
+            <div class="grid gap-10 md:grid-cols-3">
+              <div>
+                <h2 class="text-2xl font-bold tracking-tight text-slate-50">Our story</h2>
+                <p class="mt-3 text-sm text-slate-200/70">
+                  FrameSpark started with a simple observation: local brands can deliver amazing experiences,
+                  but their marketing often doesn’t match the quality on the ground.
+                </p>
+              </div>
+              <div class="md:col-span-2">
+                <p class="text-sm leading-relaxed text-slate-200/75">
+                  We built a studio-like workflow that makes premium branding accessible to stores and restaurants.
+                  Instead of treating content, ads, and websites as separate projects, we connect them into one system:
+                  capture attention, earn trust, and convert.
+                </p>
+                <p class="mt-4 text-sm leading-relaxed text-slate-200/75">
+                  Whether it’s a launch campaign, a full brand refresh, or a new website, we focus on clarity and speed.
+                  The goal is always the same: help you look credible, communicate value fast, and grow sustainably.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Mission / Vision -->
+      <section class="py-10 md:py-14">
+        <div class="mx-auto max-w-6xl px-4">
+          <div class="grid gap-4 md:grid-cols-2">
+            <div class="glass rounded-3xl p-7 reveal">
+              <p class="text-xs font-semibold uppercase tracking-widest text-slate-200/60">Mission</p>
+              <h3 class="mt-3 text-xl font-extrabold tracking-tight text-slate-50">Make premium marketing practical.</h3>
+              <p class="mt-3 text-sm text-slate-200/72">
+                Help modern businesses ship better creative, run cleaner campaigns, and build faster websites—
+                so growth feels repeatable, not random.
+              </p>
+            </div>
+            <div class="glass rounded-3xl p-7 reveal">
+              <p class="text-xs font-semibold uppercase tracking-widest text-slate-200/60">Vision</p>
+              <h3 class="mt-3 text-xl font-extrabold tracking-tight text-slate-50">Become the go-to growth partner.</h3>
+              <p class="mt-3 text-sm text-slate-200/72">
+                A brand should look as premium as the experience it delivers. We’re here to close that gap—everywhere.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Team -->
+      <section class="py-10 md:py-14">
+        <div class="mx-auto max-w-6xl px-4">
+          <div class="reveal">
+            <h2 class="text-2xl font-bold tracking-tight text-slate-50">Team</h2>
+            <p class="mt-2 text-sm text-slate-200/70">
+              Placeholder profiles—swap with real names/photos anytime.
+            </p>
+          </div>
+
+          <div class="mt-7 grid gap-4 md:grid-cols-3">
+            <div class="glass rounded-3xl p-6 reveal">
+              <div class="flex items-center gap-4">
+                <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-fsSecondary/25 to-white/5 ring-1 ring-white/10"></div>
+                <div>
+                  <p class="text-sm font-semibold text-slate-50">Creative Lead</p>
+                  <p class="text-xs text-slate-200/60">Branding • Visual Direction</p>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-slate-200/72">
+                Crafts a premium look across content, campaigns, and web—so every touchpoint feels intentional.
+              </p>
+            </div>
+
+            <div class="glass rounded-3xl p-6 reveal">
+              <div class="flex items-center gap-4">
+                <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-fsAccent/25 to-white/5 ring-1 ring-white/10"></div>
+                <div>
+                  <p class="text-sm font-semibold text-slate-50">Performance Marketer</p>
+                  <p class="text-xs text-slate-200/60">Meta • Google • Analytics</p>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-slate-200/72">
+                Turns content into results with clean tracking, tight targeting, and weekly optimization.
+              </p>
+            </div>
+
+            <div class="glass rounded-3xl p-6 reveal">
+              <div class="flex items-center gap-4">
+                <div class="h-12 w-12 rounded-2xl bg-gradient-to-br from-white/15 to-white/5 ring-1 ring-white/10"></div>
+                <div>
+                  <p class="text-sm font-semibold text-slate-50">Web Engineer</p>
+                  <p class="text-xs text-slate-200/60">UX • Frontend • Deployment</p>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-slate-200/72">
+                Builds fast, mobile-first websites that guide visitors to take action—without friction.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Why choose -->
+      <section class="py-12 md:py-16">
+        <div class="mx-auto max-w-6xl px-4">
+          <div class="glass rounded-3xl p-7 md:p-10 reveal">
+            <div class="grid gap-10 md:grid-cols-3 md:items-start">
+              <div>
+                <h2 class="text-2xl font-extrabold tracking-tight text-slate-50">Why choose FrameSpark</h2>
+                <p class="mt-3 text-sm text-slate-200/72">
+                  You don’t need more noise. You need clarity, consistency, and creative that performs.
+                </p>
+              </div>
+              <div class="md:col-span-2">
+                <div class="grid gap-4 sm:grid-cols-2">
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <p class="text-sm font-semibold text-slate-50">Startup speed</p>
+                    <p class="mt-2 text-sm text-slate-200/70">
+                      Quick iterations, sharp timelines, and a bias toward shipping.
+                    </p>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <p class="text-sm font-semibold text-slate-50">Creative with intent</p>
+                    <p class="mt-2 text-sm text-slate-200/70">
+                      Every asset is designed to earn attention and support conversion.
+                    </p>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <p class="text-sm font-semibold text-slate-50">Measurable outcomes</p>
+                    <p class="mt-2 text-sm text-slate-200/70">
+                      Tracking, reporting, and feedback loops so you always know what’s working.
+                    </p>
+                  </div>
+                  <div class="rounded-2xl border border-white/10 bg-white/5 p-5">
+                    <p class="text-sm font-semibold text-slate-50">All-in-one team</p>
+                    <p class="mt-2 text-sm text-slate-200/70">
+                      Content, marketing, web, and strategy—aligned from day one.
+                    </p>
+                  </div>
+                </div>
+
+                <div class="mt-6 flex flex-col gap-3 sm:flex-row">
+                  <a href="./contact.html" class="btn btn-primary">Get a free quick audit</a>
+                  <a href="./services.html" class="btn btn-secondary">Explore services</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer (shared) -->
+    <footer class="border-t border-white/10 py-10">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="grid gap-8 md:grid-cols-4">
+          <div class="md:col-span-2">
+            <p class="text-base font-semibold text-slate-50">FrameSpark</p>
+            <p class="mt-2 max-w-md text-sm text-slate-200/70">
+              Modern advertising and marketing for brands that want to look premium and grow with intent.
+            </p>
+            <div class="mt-4 flex flex-wrap items-center gap-3 text-sm">
+              <a class="link text-slate-100" href="./contact.html">Get a proposal</a>
+              <span class="text-slate-200/40">•</span>
+              <a class="link text-slate-100" href="./services.html">Explore services</a>
+              <span class="text-slate-200/40">•</span>
+              <a class="link text-slate-100" href="./portfolio.html">View work</a>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-sm font-semibold text-slate-50">Company</p>
+            <ul class="mt-3 grid gap-2 text-sm text-slate-200/70">
+              <li><a class="hover:text-slate-50" href="./about.html">About</a></li>
+              <li><a class="hover:text-slate-50" href="./services.html">Services</a></li>
+              <li><a class="hover:text-slate-50" href="./portfolio.html">Portfolio</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-sm font-semibold text-slate-50">Social</p>
+            <ul class="mt-3 grid gap-2 text-sm text-slate-200/70">
+              <li><a class="hover:text-slate-50" href="#" aria-label="Instagram (placeholder)">Instagram</a></li>
+              <li><a class="hover:text-slate-50" href="#" aria-label="LinkedIn (placeholder)">LinkedIn</a></li>
+              <li><a class="hover:text-slate-50" href="#" aria-label="YouTube (placeholder)">YouTube</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-slate-200/55 sm:flex-row sm:items-center sm:justify-between">
+          <p>© <span id="year"></span> FrameSpark. All rights reserved.</p>
+          <p>Built for speed • SEO-friendly • Mobile-first</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="./script.js"></script>
+  </body>
+</html>
+

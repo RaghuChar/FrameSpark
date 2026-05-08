@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- FrameSpark — Members -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Members — FrameSpark</title>
+    <meta
+      name="description"
+      content="Meet the FrameSpark team—roles, expertise, and individual portfolios."
+    />
+    <meta name="theme-color" content="#0F172A" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              fsPrimary: "#0F172A",
+              fsAccent: "#38BDF8",
+              fsSecondary: "#1D4ED8",
+            },
+          },
+        },
+      };
+    </script>
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="icon" type="image/png" href="./FrameSpark_.PNG" />
+  </head>
+  <body class="min-h-screen text-slate-200">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <div class="bg-grid fixed inset-0 opacity-40"></div>
+
+    <!-- Header / Navbar (shared) -->
+    <header id="siteHeader" class="fixed top-0 left-0 right-0 z-50">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="flex h-28 items-center justify-between">
+          <a href="./index.html" class="flex items-center gap-2 rounded-xl px-2 py-1 hover:bg-white/5">
+            <img
+              src="./FrameSpark_.PNG"
+              alt="FrameSpark"
+              class="logo-img h-20 w-auto rounded-xl sm:h-24"
+              loading="eager"
+            />
+            <span class="sr-only">FrameSpark</span>
+          </a>
+
+          <nav class="hidden items-center gap-6 md:flex" aria-label="Primary">
+            <a data-nav href="./index.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">Home</a>
+            <a data-nav href="./about.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">About</a>
+            <a data-nav href="./services.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">Services</a>
+            <a data-nav href="./portfolio.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">Portfolio</a>
+            <a data-nav href="./members.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">Members</a>
+            <a data-nav href="./contact.html" class="text-sm font-medium text-slate-200/80 hover:text-slate-50">Contact</a>
+          </nav>
+
+          <div class="hidden items-center gap-3 md:flex">
+            <a href="./contact.html" class="btn btn-ghost text-sm">Let’s talk</a>
+            <a href="./services.html" class="btn btn-primary text-sm">View services</a>
+          </div>
+
+          <button
+            id="menuButton"
+            class="md:hidden inline-flex items-center justify-center rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-100"
+            aria-controls="mobileMenu"
+            aria-expanded="false"
+            aria-label="Open menu"
+          >
+            <span class="sr-only">Menu</span>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <path d="M4 7h16M4 12h16M4 17h16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <div id="mobileMenu" class="hidden md:hidden">
+        <div class="mx-auto max-w-6xl px-4 pb-4">
+          <div class="glass rounded-2xl p-4">
+            <div class="grid gap-2">
+              <a data-nav href="./index.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">Home</a>
+              <a data-nav href="./about.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">About</a>
+              <a data-nav href="./services.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">Services</a>
+              <a data-nav href="./portfolio.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">Portfolio</a>
+              <a data-nav href="./members.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">Members</a>
+              <a data-nav href="./contact.html" class="rounded-xl px-3 py-2 text-sm font-medium text-slate-200/80 hover:bg-white/5 hover:text-slate-50">Contact</a>
+              <div class="mt-2 grid grid-cols-2 gap-2">
+                <a href="./contact.html" class="btn btn-ghost text-sm">Get started</a>
+                <a href="./portfolio.html" class="btn btn-primary text-sm">View work</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main id="main" class="pt-32">
+      <!-- Intro -->
+      <section class="py-10 md:py-14">
+        <div class="mx-auto max-w-6xl px-4">
+          <div class="grid gap-10 md:grid-cols-2 md:items-start">
+            <div class="reveal">
+              <p class="text-xs font-semibold uppercase tracking-widest text-slate-200/60">Members</p>
+              <h1 class="mt-3 text-4xl font-extrabold tracking-tight text-slate-50">
+                Meet the people behind the spark.
+              </h1>
+              <p class="mt-4 text-sm leading-relaxed text-slate-200/75">
+                Add every team member here with their role, photo, and a mini portfolio—so clients can see who’s
+                doing the work and what they’ve shipped.
+              </p>
+              <div class="mt-7 flex flex-col gap-3 sm:flex-row">
+                <a class="btn btn-primary" href="./contact.html">Work with us</a>
+                <a class="btn btn-secondary" href="./portfolio.html">Agency portfolio</a>
+              </div>
+            </div>
+
+            <div class="reveal" data-reveal="scale">
+              <div class="glass rounded-3xl p-6" data-tilt="card" data-tilt-strength="9">
+                <p class="text-sm font-semibold text-slate-50">Tip</p>
+                <p class="mt-2 text-sm text-slate-200/70">
+                  Replace the placeholder images with your real photos (keep them square for the best look).
+                  You can also link each member to Instagram, LinkedIn, Behance, GitHub, or a personal site.
+                </p>
+                <div class="mt-5 hairline"></div>
+                <div class="mt-5 grid gap-3 text-sm text-slate-200/70">
+                  <p>• Photos: place files like <span class="text-slate-50">./assets/team/name.jpg</span></p>
+                  <p>• Portfolios: use 3–6 highlights per person</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Members Grid -->
+      <section class="py-8 md:py-10">
+        <div class="mx-auto max-w-6xl px-4">
+          <div class="reveal flex items-end justify-between gap-6">
+            <div>
+              <h2 class="text-2xl font-bold tracking-tight text-slate-50">Team</h2>
+              <p class="mt-2 text-sm text-slate-200/70">Placeholders below—swap in your real names/roles/links.</p>
+            </div>
+            <a href="./contact.html" class="hidden sm:inline-flex text-sm font-semibold text-slate-100 link">Hire FrameSpark</a>
+          </div>
+
+          <div class="mt-7 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+            <!-- Member: Raghunath N -->
+            <article class="glass rounded-3xl p-6 reveal">
+              <div class="flex items-center gap-4">
+                <img
+                  src="./assets/team/raghunath.jpg"
+                  alt="Raghunath N"
+                  class="h-14 w-14 rounded-2xl object-cover ring-1 ring-white/10"
+                  loading="lazy"
+                />
+                <div>
+                  <p class="text-sm font-semibold text-slate-50">Raghunath N</p>
+                  <p class="text-xs text-slate-200/60">Founder &amp; CEO</p>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-slate-200/72">
+                Founder and CEO. Raghunath drives FrameSpark's visual direction, brand identity and creative strategy across campaigns, content and web.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <a href="#" class="btn btn-secondary text-sm px-4 py-2" aria-label="LinkedIn for Raghunath">LinkedIn</a>
+                <a href="#" class="btn btn-secondary text-sm px-4 py-2" aria-label="Portfolio for Raghunath">Portfolio</a>
+              </div>
+              <div class="mt-6 hairline"></div>
+              <div class="mt-5">
+                <p class="text-xs font-semibold uppercase tracking-widest text-slate-200/55">Portfolio highlights</p>
+                <ul class="mt-3 grid gap-2 text-sm text-slate-200/72">
+                  <li>• Brand identity systems & visual guidelines</li>
+                  <li>• Launch reels & short-form campaigns</li>
+                  <li>• Product & food photography direction</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Member: Lokesh Kanagaraj -->
+            <article class="glass rounded-3xl p-6 reveal">
+              <div class="flex items-center gap-4">
+                <img
+                  src="./assets/team/lokesh.jpg"
+                  alt="Lokesh Kanagaraj"
+                  class="h-14 w-14 rounded-2xl object-cover ring-1 ring-white/10"
+                  loading="lazy"
+                />
+                <div>
+                  <p class="text-sm font-semibold text-slate-50">Lokesh Kanagaraj</p>
+                  <p class="text-xs text-slate-200/60">Media Director</p>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-slate-200/72">
+                Media director overseeing video production, post-production and creative shoots—ensuring high-quality content that performs on social platforms.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <a href="#" class="btn btn-secondary text-sm px-4 py-2" aria-label="LinkedIn for Lokesh">LinkedIn</a>
+                <a href="#" class="btn btn-secondary text-sm px-4 py-2" aria-label="Showreel for Lokesh">Showreel</a>
+              </div>
+              <div class="mt-6 hairline"></div>
+              <div class="mt-5">
+                <p class="text-xs font-semibold uppercase tracking-widest text-slate-200/55">Portfolio highlights</p>
+                <ul class="mt-3 grid gap-2 text-sm text-slate-200/72">
+                  <li>• Short-form social video & reels production</li>
+                  <li>• Long-form brand films & client showreels</li>
+                  <li>• Motion graphics & editing workflows</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Member: Niranjana A -->
+            <article class="glass rounded-3xl p-6 reveal">
+              <div class="flex items-center gap-4">
+                <img
+                  src="./assets/team/Niranjana.jpg"
+                  alt="Niranjana A"
+                  class="h-14 w-14 rounded-2xl object-cover ring-1 ring-white/10"
+                  loading="lazy"
+                />
+                <div>
+                  <p class="text-sm font-semibold text-slate-50">Niranjana A</p>
+                  <p class="text-xs text-slate-200/60">Manager &amp; Creative Director</p>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-slate-200/72">
+                Creative director overseeing Website Designing, visual and conceptual direction of projects.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <a href="#" class="btn btn-secondary text-sm px-4 py-2" aria-label="LinkedIn for Niranjana">LinkedIn</a>
+                <a href="#" class="btn btn-secondary text-sm px-4 py-2" aria-label="Showreel for Niranjana">Showreel</a>
+              </div>
+              <div class="mt-6 hairline"></div>
+              <div class="mt-5">
+                <p class="text-xs font-semibold uppercase tracking-widest text-slate-200/55">Portfolio highlights</p>
+                <ul class="mt-3 grid gap-2 text-sm text-slate-200/72">
+                  <li>• Develops creative vision for projects</li>
+                  <li>• Ensures the brand identity and message</li>
+                  <li>• Brainstorms innovative ideas and concepts</li>
+                </ul>
+              </div>
+            </article>
+
+            <!-- Member: Devasena JG -->
+            <article class="glass rounded-3xl p-6 reveal">
+              <div class="flex items-center gap-4">
+                <img
+                  src="./assets/team/devasena.jpg"
+                  alt="Devasena JG"
+                  class="h-14 w-14 rounded-2xl object-cover ring-1 ring-white/10"
+                  loading="lazy"
+                />
+                <div>
+                  <p class="text-sm font-semibold text-slate-50">Devasena JG</p>
+                  <p class="text-xs text-slate-200/60">Director &amp; HR</p>
+                </div>
+              </div>
+              <p class="mt-4 text-sm text-slate-200/72">
+                People operations lead managing hiring, onboarding and team culture—building the systems that help our creatives do their best work.
+              </p>
+              <div class="mt-5 flex flex-wrap gap-2">
+                <a href="#" class="btn btn-secondary text-sm px-4 py-2" aria-label="Contact Devasena">Contact</a>
+              </div>
+              <div class="mt-6 hairline"></div>
+              <div class="mt-5">
+                <p class="text-xs font-semibold uppercase tracking-widest text-slate-200/55">Focus areas</p>
+                <ul class="mt-3 grid gap-2 text-sm text-slate-200/72">
+                  <li>• Recruitment & onboarding</li>
+                  <li>• People ops & payroll</li>
+                  <li>• Learning & team development</li>
+                </ul>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA -->
+      <section class="py-12 md:py-16">
+        <div class="mx-auto max-w-6xl px-4">
+          <div class="glass relative overflow-hidden rounded-3xl p-8 md:p-12 reveal">
+            <div class="absolute -top-24 -right-24 h-72 w-72 rounded-full bg-fsSecondary/20 blur-3xl"></div>
+            <div class="absolute -bottom-24 -left-24 h-72 w-72 rounded-full bg-fsAccent/20 blur-3xl"></div>
+            <div class="relative grid items-center gap-8 md:grid-cols-3">
+              <div class="md:col-span-2">
+                <h2 class="text-2xl font-extrabold tracking-tight text-slate-50 md:text-3xl">
+                  Want to add your real members now?
+                </h2>
+                <p class="mt-3 text-sm text-slate-200/72">
+                  Send names, roles, photos, and portfolio links—and we’ll update this page to match your real team.
+                </p>
+              </div>
+              <div class="flex flex-col gap-3 sm:flex-row md:flex-col md:items-end">
+                <a href="./contact.html" class="btn btn-primary w-full md:w-auto">Contact us</a>
+                <a href="./about.html" class="btn btn-secondary w-full md:w-auto">About FrameSpark</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Enquiry Form (stores to Supabase + triggers email via server function) -->
+    <section class="py-12 bg-transparent">
+      <div class="mx-auto max-w-3xl px-4">
+        <div class="glass rounded-3xl p-8">
+          <h3 class="text-xl font-bold text-slate-50">Send an enquiry</h3>
+          <p class="mt-2 text-sm text-slate-200/70">Send a quick message and we’ll follow up via email.</p>
+
+          <form id="enquiryForm" class="mt-6 grid gap-3">
+            <div class="grid sm:grid-cols-2 gap-3">
+              <input name="name" required placeholder="Full name" class="input" />
+              <input name="email" type="email" required placeholder="Email address" class="input" />
+            </div>
+            <select name="member" class="input" aria-label="Team member">
+              <option value="General">General enquiry</option>
+              <option value="Raghunath N">Raghunath N — Founder &amp; Creative Director</option>
+              <option value="Lokesh Kanagaraj">Lokesh Kanagaraj — Co-Founder &amp; Media Director</option>
+              <option value="Devasena JG">Devasena JG — Human Resources</option>
+            </select>
+            <textarea name="message" rows="5" required placeholder="How can we help?" class="input"></textarea>
+
+            <div class="flex items-center gap-3">
+              <button type="submit" class="btn btn-primary">Send enquiry</button>
+              <div id="enquiryStatus" class="text-sm text-slate-200/70"></div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer (shared) -->
+    <footer class="border-t border-white/10 py-10">
+      <div class="mx-auto max-w-6xl px-4">
+        <div class="grid gap-8 md:grid-cols-4">
+          <div class="md:col-span-2">
+            <p class="text-base font-semibold text-slate-50">FrameSpark</p>
+            <p class="mt-2 max-w-md text-sm text-slate-200/70">
+              Modern advertising and marketing for brands that want to look premium and grow with intent.
+            </p>
+            <div class="mt-4 flex flex-wrap items-center gap-3 text-sm">
+              <a class="link text-slate-100" href="./contact.html">Get a proposal</a>
+              <span class="text-slate-200/40">•</span>
+              <a class="link text-slate-100" href="./services.html">Explore services</a>
+              <span class="text-slate-200/40">•</span>
+              <a class="link text-slate-100" href="./portfolio.html">View work</a>
+            </div>
+          </div>
+
+          <div>
+            <p class="text-sm font-semibold text-slate-50">Company</p>
+            <ul class="mt-3 grid gap-2 text-sm text-slate-200/70">
+              <li><a class="hover:text-slate-50" href="./about.html">About</a></li>
+              <li><a class="hover:text-slate-50" href="./services.html">Services</a></li>
+              <li><a class="hover:text-slate-50" href="./portfolio.html">Portfolio</a></li>
+              <li><a class="hover:text-slate-50" href="./members.html">Members</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <p class="text-sm font-semibold text-slate-50">Social</p>
+            <ul class="mt-3 grid gap-2 text-sm text-slate-200/70">
+              <li><a class="hover:text-slate-50" href="#" aria-label="Instagram (placeholder)">Instagram</a></li>
+              <li><a class="hover:text-slate-50" href="#" aria-label="LinkedIn (placeholder)">LinkedIn</a></li>
+              <li><a class="hover:text-slate-50" href="#" aria-label="YouTube (placeholder)">YouTube</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="mt-10 flex flex-col gap-2 border-t border-white/10 pt-6 text-xs text-slate-200/55 sm:flex-row sm:items-center sm:justify-between">
+          <p>© <span id="year"></span> FrameSpark. All rights reserved.</p>
+          <p>Built for speed • SEO-friendly • Mobile-first</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="./script.js"></script>
+    <!-- Optional: include supabase-config.js if you created one from supabase-config.example.js -->
+    <script>
+      // load supabase-config.js dynamically if it exists (silently fails if not present)
+      (function(){
+        const s = document.createElement('script');
+        s.src = './supabase-config.js';
+        s.onload = () => console.log('supabase-config loaded');
+        s.onerror = () => console.log('supabase-config not found');
+        document.head.appendChild(s);
+      })();
+    </script>
+    <script src="./enquiry.js"></script>
+  </body>
+</html>
+
